@@ -11,7 +11,7 @@ import { ignoreSelectFiles } from './elements/ignore/select';
 import { ignoreSwitchFiles } from './elements/ignore/switch';
 
 export default {
-  input: ['src/platinum-weather-card.ts'],
+  input: ['src/platinumdx-weather-card.ts'],
   output: {
     dir: './dist',
     format: 'es',
