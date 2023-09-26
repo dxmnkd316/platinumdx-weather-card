@@ -13,13 +13,13 @@ jobs:
     name: Build Master
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Build
         run: |
-          rm -rf /home/runner/work/platinum-weather-card/platinum-weather-card/node_modules
+          rm -rf /home/runner/work/platinumdx-weather-card/platinumdx-weather-card/node_modules
           npm install
           npm run lint && npm run rollup -c rollup.config.js
-          ls -R /home/runner/work/platinum-weather-card/platinum-weather-card/dist
+          ls -R /home/runner/work/platinumdx-weather-card/platinumdx-weather-card/dist
       # - name: HACS validation
       #   uses: 'hacs/action@main'
       #   with:
