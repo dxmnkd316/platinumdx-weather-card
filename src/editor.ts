@@ -1302,9 +1302,8 @@ export class WeatherCardEditor extends LitElement implements LovelaceCardEditor 
           <mwc-list-item value="3">3</mwc-list-item>
           <mwc-list-item value="4">4</mwc-list-item>
           <mwc-list-item value="5">5</mwc-list-item>
-          ${this._daily_forecast_layout === 'vertical' ? html`
-            <mwc-list-item value="6">6</mwc-list-item>
-            <mwc-list-item value="7">7</mwc-list-item>` : html``}
+          <mwc-list-item value="6">6</mwc-list-item>
+          <mwc-list-item value="7">7</mwc-list-item>
         </ha-select>
         ${this._daily_forecast_layout === 'vertical' ? html`<ha-select label="Daily Extended Days"
           .configValue=${'daily_extended_forecast_days'} .value=${this._daily_extended_forecast_days !== null ?
