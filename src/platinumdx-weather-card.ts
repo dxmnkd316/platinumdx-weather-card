@@ -848,7 +848,7 @@ export class PlatinumdxWeatherCard extends LitElement {
         return nightForecast['temperature'] !== undefined ? String(nightForecast['temperature']) : undefined;
       }
       else if (propKey === 'detailed_description') {
-        return (dayForecast[propKey] !== undefined ? String(dayForecast[propKey]) : "") + "<br>" + (nightForecast[propKey] !== undefined ? String(nightForecast[propKey]) : "")
+        return (dayForecast[propKey] !== undefined ? String(dayForecast[propKey]) : "") + (nightForecast[propKey] !== undefined ? String(nightForecast[propKey]) : "")
       }
       return dayForecast[propKey] !== undefined ? String(dayForecast[propKey]) : undefined;
     }
@@ -2604,7 +2604,6 @@ export class PlatinumdxWeatherCard extends LitElement {
       .fcasttooltiptext {
         padding-left: 8px;
         padding-right: 8px;
-        white-space: pre-wrap;
       }
     `;
   }
