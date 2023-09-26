@@ -2604,6 +2604,7 @@ export class PlatinumdxWeatherCard extends LitElement {
       .fcasttooltiptext {
         padding-left: 8px;
         padding-right: 8px;
+        white-space: pre-wrap;
       }
     `;
   }
