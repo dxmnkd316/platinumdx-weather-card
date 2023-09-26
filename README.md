@@ -1,31 +1,21 @@
-# Platinum Weather Card by [@makin-things](https://www.github.com/makin-things)
+# PlatinumDX Weather Card by [@dxmnkd316](https://www.github.com/dxmnkd316)
 
-A highly configurable weather card with a graphical configuration.
+A highly configurable weather card with a graphical configuration.  Based on original Platinum Weather Card by [@makin-things](https://www.github.com/makin-things)
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/hacs/integration)
 [![GitHub Release][releases-shield]][releases]
 [![License][license-shield]](LICENSE.md)
 ![Maintenance](https://img.shields.io/maintenance/yes/2022?style=for-the-badge)
 
-# Support
-
-Hey dude! Help me out for a couple of :beers: or a :coffee:!
-
-[![coffee](https://www.buymeacoffee.com/assets/img/custom_images/black_img.png)](https://www.buymeacoffee.com/theOzzieRat)
-
-If you like this card and would like to see me continue development of it a small donation would be greatly appreciated. I have already spent hundreds of hours working on this.
-
 # Need Help?
 
-If you need help the best place to ask is in the Home Assistant Community. There is a thread that can be found [here](https://community.home-assistant.io/t/platinum-weather-card-support/449166).
-
-Alternativley create an issue on github, but note that only a couple of people will see that and may be busy doing other things.
+This is not a supported repo.  If you need help with the original Platinum Weather card, the best place to ask is in the Home Assistant Community. There is a thread that can be found [here](https://community.home-assistant.io/t/platinum-weather-card-support/449166).
 
 # Overview
 
 This is a fully customisable weather card with a graphical configuration. It has been patterned after the original Dark-Sky animated weather card (https://github.com/iammexx/home-assistant-config/tree/master/ui/darksky), and a forked variant, the BOM Weather Card (https://github.com/DavidFW1960/bom-weather-card). The aim is that this card is usable by people everywhere and be able to deal with your sensors no matter what integration(s) provides them. To get the most from the card you may need to look at what various weather integrations provide in addition to the standard weather entity.
 
-![Platinum Weather card](https://raw.githubusercontent.com/Makin-Things/platinum-weather-card/master/images/platinum-weather-card.png)
+![Platinumdx Weather card](https://raw.githubusercontent.com/dxmnkd316/platinumdx-weather-card/master/images/platinumdx-weather-card.png)
 
 The design goals for the card are:
 
@@ -44,7 +34,7 @@ This plugin is now part of the default HACS store. Install card from HACS (note 
 You MUST have already configured at least one weather integration to provde data for the card to use. As with all cards they only visualise data from backend entities. There are numerous weather integrations available in both the core and HACS. You will need to find one that is best suited to your location (some countries have multiple options with varying degrees of accuracy). It is possible to use entities from multiple integrations (it may require the use of template sensors to extract what you need).
 When you first create a card it will show nothing until you go and select the entities you want to use in the GUI config, so a card that looks like this is not an error, but just needs configuring.
 
-![Unconfigured card](https://raw.githubusercontent.com/Makin-Things/platinum-weather-card/master/images/unconfigured-card.png)
+![Unconfigured card](https://raw.githubusercontent.com/dxmnkd316/platinumdx-weather-card/master/images/unconfigured-card.png)
 
 Most of the configuration should be reasonably obvious, but the following sections give more details. It is recommended that you at least have a read of both the 'Concepts' and 'Sections'. After that it is more of a reference for the various parts of the card if you need more information.
 
@@ -52,7 +42,7 @@ Most of the configuration should be reasonably obvious, but the following sectio
 
 The card has sections, any of these sections can be enabled/disabled and reordered to suit your individual needs. Each section has its own configuration pages for the selection of entities and to control display and styling.
 
-![Platinum Weather card](https://raw.githubusercontent.com/Makin-Things/platinum-weather-card/master/images/all-sections-highlighted.png)
+![PlatinumDX Weather card](https://raw.githubusercontent.com/dxmnk316/platinumdx-weather-card/master/images/all-sections-highlighted.png)
 
 It is understood that everyone's use case may be different (and you may have limited data depending on the weather integration you are using), the default settings are aimed at maintaining compatibiltiy with the old bom/custom/darksky weather card that we are aiming to deprecate.
 There is no reason that all of your weather data needs to be shown on a single card. This card allows you to have multiple instances with different configurations to achieve what you want.
@@ -69,25 +59,25 @@ On the cards main configuration dialog, use the switch to completely remove a se
 
 This section as the name suggests, adds an overview section to the card.
 
-![Platinum Weather card](https://raw.githubusercontent.com/Makin-Things/platinum-weather-card/master/images/overview-section-highlighted.png)
+![PlatinumDX Weather card](https://raw.githubusercontent.com/dxmnkd316/platinumdx-weather-card/master/images/overview-section-highlighted.png)
 
 There are 4 different layout options to choose from for the overview section. There are 'complete', 'observations', 'forecast' and 'title only'.
 
 <caption>Complete</caption>
 
-![Platinum Weather card](https://raw.githubusercontent.com/Makin-Things/platinum-weather-card/master/images/overview-section-complete.png 'Complete')
+![PlatinumDX Weather card](https://raw.githubusercontent.com/dxmnkd316/platinumdx-weather-card/master/images/overview-section-complete.png 'Complete')
 
 <caption>Observations</caption>
 
-![Platinum Weather card](https://raw.githubusercontent.com/Makin-Things/platinum-weather-card/master/images/overview-section-observations.png 'Observations')
+![PlatinumDX Weather card](https://raw.githubusercontent.com/dxmnkd316/platinumdx-weather-card/master/images/overview-section-observations.png 'Observations')
 
 <caption>Forecast</caption>
 
-![Platinum Weather card](https://raw.githubusercontent.com/Makin-Things/platinum-weather-card/master/images/overview-section-forecast.png 'Forecast')
+![PlatinumDX Weather card](https://raw.githubusercontent.com/dxmnkd316/platinumdx-weather-card/master/images/overview-section-forecast.png 'Forecast')
 
 <caption>Title Only</caption>
 
-![Platinum Weather card](https://raw.githubusercontent.com/Makin-Things/platinum-weather-card/master/images/overview-section-title-only.png 'Title Only')
+![PlatinumDX Weather card](https://raw.githubusercontent.com/dxmnkd316/platinumdx-weather-card/master/images/overview-section-title-only.png 'Title Only')
 
 The fields available to fill in will be altered based on the layout chosen.
 
@@ -110,7 +100,7 @@ The various entity fields can either be a sensor that provides the value in its 
 
 A section that shows todays detailed forecast. To use this section you will need a weather integration that provides a more detailed weather forecast (this does not exist within the standard weather.\* sensor). If it is not available for your location the best thing to do is to disable the extended section.
 
-![Platinum Weather card](https://raw.githubusercontent.com/Makin-Things/platinum-weather-card/master/images/extended-section-highlighted.png)
+![PlatinumDX Weather card](https://raw.githubusercontent.com/dxmnkd316/platinumdx-weather-card/master/images/extended-section-highlighted.png)
 
 The following fields are available.
 
@@ -126,7 +116,7 @@ The following fields are available.
 
 A section to show a set of data in 2 columns (with up to 8 rows). This section is highly configurable. As you select different options for the slots the set of entities that are needed gets dynamically updated to indicate what options should be set.
 
-![Platinum Weather card](https://raw.githubusercontent.com/Makin-Things/platinum-weather-card/master/images/slots-section-highlighted.png)
+![PlatinumDX Weather card](https://raw.githubusercontent.com/dxmnkd316/platinumdx-weather-card/master/images/slots-section-highlighted.png)
 
 The following table describes what each slot value is intended to show. Note that what is available is very dependant on the weather integration in use.
 
@@ -165,17 +155,17 @@ The following table describes what each slot value is intended to show. Note tha
 
 A section to show the daily forecast for a specified number of days in either a horizontal or vertical layout.
 
-![Platinum Weather card](https://raw.githubusercontent.com/Makin-Things/platinum-weather-card/master/images/daily-forecast-section-highlighted.png)
+![PlatinumDX Weather card](https://raw.githubusercontent.com/dxmnkd316/platinumdx-weather-card/master/images/daily-forecast-section-highlighted.png)
 
 There are two posible layouts.
 
 <caption>Horizontal</caption>
 
-![Platinum Weather card](https://raw.githubusercontent.com/Makin-Things/platinum-weather-card/master/images/daily-forecast-section-horizontal.png 'Horizontal')
+![PlatinumDX Weather card](https://raw.githubusercontent.com/dxmnkd316/platinumdx-weather-card/master/images/daily-forecast-section-horizontal.png 'Horizontal')
 
 <caption>Vertical</caption>
 
-![Platinum Weather card](https://raw.githubusercontent.com/Makin-Things/platinum-weather-card/master/images/daily-forecast-section-vertical.png 'Vertical')
+![PlatinumDX Weather card](https://raw.githubusercontent.com/dxmnkd316/platinumdx-weather-card/master/images/daily-forecast-section-vertical.png 'Vertical')
 
 The following fields are available.
 
@@ -198,7 +188,7 @@ For these entities you can either specify a weather.\* sensor (except for extend
 
 This page contains options that don't neatly fit in other places (ie. they have an effect on multiple sections).
 
-![Platinum Weather card](https://raw.githubusercontent.com/Makin-Things/platinum-weather-card/master/images/global-options.png)
+![PlatinumDX Weather card](https://raw.githubusercontent.com/dxmnkd316/platinumdx-weather-card/master/images/global-options.png)
 
 The following fields are available.
 
@@ -212,7 +202,7 @@ The following fields are available.
 
 Migration from the older [Custom Animated Weather Card](https://github.com/DavidFW1960/bom-weather-card) is straight forward. It is recommended that you create a new card rather so that your current cards config is preserved until you are happy with the new cards configuration.
 
-Create a new Platinum Weather Card, switch to the Code Editor (YAML mode) and simply paste in the contents of your existing configuration, making sure to keep the new `type: custom:platinum-weather-card`. At this stage some elements may not appear correctly. Save the card and then edit it again (the editor updates the configuration when opened if it detects an older config and performs some update tasks) and then save it once more.
+Create a new Platinum Weather Card, switch to the Code Editor (YAML mode) and simply paste in the contents of your existing configuration, making sure to keep the new `type: custom:platinumdx-weather-card`. At this stage some elements may not appear correctly. Save the card and then edit it again (the editor updates the configuration when opened if it detects an older config and performs some update tasks) and then save it once more.
 
 If there are still items that don't look correct you will need to manually adjust those to suit.
 
@@ -365,6 +355,6 @@ This reference is here for completeness. All settings can be configured using th
 | daily_extended_forecast_days   | Number  | `7`          | Show extended forecast. (only for vertical forecast `(1-7)`)               |
 | option_daily_color_fire_danger | Boolean | `true`       | Use color attributes from fire danger if set (oly for vertical forecast)   |
 
-[license-shield]: https://img.shields.io/github/license/makin-things/platinum-weather-card.svg?style=for-the-badge
-[releases-shield]: https://img.shields.io/github/release/makin-things/platinum-weather-card.svg?style=for-the-badge
-[releases]: https://github.com/makin-things/platinum-weather-card/releases
+[license-shield]: https://img.shields.io/github/license/dxmnkd316/platinum-weather-card.svg?style=for-the-badge
+[releases-shield]: https://img.shields.io/github/release/dxmnkd316/platinum-weather-card.svg?style=for-the-badge
+[releases]: https://github.com/dxmnkd316/platinum-weather-card/releases
