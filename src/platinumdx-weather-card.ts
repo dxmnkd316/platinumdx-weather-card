@@ -12,7 +12,7 @@ import { CARD_VERSION } from './const';
 
 /* eslint no-console: 0 */
 console.info(
-  `%c  PLATINUM-WEATHER-CARD  \n%c  Version ${CARD_VERSION}          `,
+  `%c  PLATINUMDX-WEATHER-CARD  \n%c  Version ${CARD_VERSION}          `,
   'color: orange; font-weight: bold; background: black',
   'color: white; font-weight: bold; background: dimgray',
 );
@@ -20,13 +20,13 @@ console.info(
 // This puts your card into the UI card picker dialog
 (window as any).customCards = (window as any).customCards || [];
 (window as any).customCards.push({
-  type: 'platinum-weather-card',
-  name: 'Platinum Weather Card',
+  type: 'platinumdx-weather-card',
+  name: 'Platinumdx Weather Card',
   description: 'An fully customisable weather card with a GUI configuration',
 });
 
 // TODO Name your custom element
-@customElement('platinum-weather-card')
+@customElement('platinumdx-weather-card')
 export class PlatinumWeatherCard extends LitElement {
   public static async getConfigElement(): Promise<LovelaceCardEditor> {
     await import('./editor');
