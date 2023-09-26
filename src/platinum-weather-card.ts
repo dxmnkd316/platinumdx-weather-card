@@ -840,8 +840,8 @@ export class PlatinumWeatherCard extends LitElement {
       return forecastForThisDay[0][propKey] !== undefined ? String(forecastForThisDay[0][propKey]) : undefined;
     }
     else if (forecastForThisDay.length === 2) {
-      const dayForecast = forecastForThisDay.find(o => o.daytime === true);
-      const nightForecast = forecastForThisDay.find(o => o.daytime === false);
+      const dayForecast = forecastForThisDay.find(o => o.is_daytime === true);
+      const nightForecast = forecastForThisDay.find(o => o.is_daytime === false);
 
       //Get low temp from night forecast
       if (propKey === 'templow') {
