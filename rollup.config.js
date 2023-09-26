@@ -43,7 +43,7 @@ const plugins = [
 
 export default [
   {
-    input: 'src/platinum-weather-card.ts',
+    input: 'src/platinumdx-weather-card.ts',
     output: {
       dir: 'dist',
       format: 'es',
