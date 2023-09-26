@@ -27,10 +27,10 @@ console.info(
 
 // TODO Name your custom element
 @customElement('platinumdx-weather-card')
-export class PlatinumWeatherCard extends LitElement {
+export class PlatinumdxWeatherCard extends LitElement {
   public static async getConfigElement(): Promise<LovelaceCardEditor> {
     await import('./editor');
-    return document.createElement('platinum-weather-card-editor');
+    return document.createElement('platinumdx-weather-card-editor');
   }
 
   public static getStubConfig(): Record<string, unknown> {
