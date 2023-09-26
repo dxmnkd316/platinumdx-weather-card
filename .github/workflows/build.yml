@@ -13,7 +13,7 @@ jobs:
     name: Build Master
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Build
         run: |
           rm -rf /home/runner/work/platinumdx-weather-card/platinumdx-weather-card/node_modules
