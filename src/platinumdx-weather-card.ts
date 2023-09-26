@@ -847,6 +847,9 @@ export class PlatinumdxWeatherCard extends LitElement {
       if (propKey === 'templow') {
         return nightForecast['temperature'] !== undefined ? String(nightForecast['temperature']) : undefined;
       }
+      else if (propKey === 'detailed_description') {
+        return (dayForecast[propKey] !== undefined ? String(dayForecast[propKey]) : "") + "<br>" + (nightForecast[propKey] !== undefined ? String(nightForecast[propKey]) : "")
+      }
       return dayForecast[propKey] !== undefined ? String(dayForecast[propKey]) : undefined;
     }
 
