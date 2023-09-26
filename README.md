@@ -15,7 +15,7 @@ This is not a supported repo.  If you need help with the original Platinum Weath
 
 This is a fully customisable weather card with a graphical configuration. It has been patterned after the original Dark-Sky animated weather card (https://github.com/iammexx/home-assistant-config/tree/master/ui/darksky), and a forked variant, the BOM Weather Card (https://github.com/DavidFW1960/bom-weather-card). The aim is that this card is usable by people everywhere and be able to deal with your sensors no matter what integration(s) provides them. To get the most from the card you may need to look at what various weather integrations provide in addition to the standard weather entity.
 
-![Platinumdx Weather card](https://raw.githubusercontent.com/dxmnkd316/platinumdx-weather-card/master/images/platinumdx-weather-card.png)
+![Platinumdx Weather card](https://raw.githubusercontent.com/dxmnkd316/platinumdx-weather-card/master/images/platinum-weather-card.png)
 
 The design goals for the card are:
 
@@ -357,4 +357,4 @@ This reference is here for completeness. All settings can be configured using th
 
 [license-shield]: https://img.shields.io/github/license/dxmnkd316/platinum-weather-card.svg?style=for-the-badge
 [releases-shield]: https://img.shields.io/github/release/dxmnkd316/platinum-weather-card.svg?style=for-the-badge
-[releases]: https://github.com/dxmnkd316/platinum-weather-card/releases
+[releases]: https://github.com/dxmnkd316/platinumdx-weather-card/releases
