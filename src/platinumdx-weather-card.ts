@@ -187,7 +187,7 @@ export class PlatinumdxWeatherCard extends LitElement {
       if (this._config[entityName] !== undefined) {
         const entity = this.hass.states[this._config[entityName]];
         // check if we have a weather domain as the entity
-        if (this._config[entityName].match('^weather.')) {
+        if (this._config[entityName].match('^weather.') || this._config[entityName].match('^sensor.')) {
           // we are dealing with the weather domain
           // check that attributes exist for the first day
           const forecastDate = new Date();
