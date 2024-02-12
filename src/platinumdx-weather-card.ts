@@ -631,7 +631,7 @@ export class PlatinumdxWeatherCard extends LitElement {
         const popEntity = start && this._config.entity_pop_1 ? this._config.entity_pop_1.replace(/(\d+)(?!.*\d)/g, String(Number(start) + i)) : undefined;
         pop = start ? html`<li class="f-slot-horiz-text"><span><div class="slot-text pop">${popEntity && this.hass.states[popEntity] ? Math.round(Number(this.hass.states[popEntity].state)) : "---"}</div><div class="unit">%</div></span></li>` : html``;
       }
-      if (this._config.entity_pos_1?.match('^weather.')) {
+      if (this._config.entity_pos_1?.match('^weather.') || this._config.entity_pos_1?.match('^sensor.')) {
         const posEntity = this._config.entity_pos_1;
         const posData = this._getForecastPropFromWeather(this.hass.states[posEntity].attributes.forecast, forecastDate, 'precipitation');
         pos = posEntity ? html`<li class="f-slot-horiz-text"><span><div class="pos">${this.hass.states[posEntity] && posData !== undefined ? posData : "---"}</div><div class="unit">${this.getUOM('precipitation')}</div></span></li>` : html``;
@@ -748,7 +748,7 @@ export class PlatinumdxWeatherCard extends LitElement {
           <div class="f-slot-vert"><div class="f-label">Chance of rain </div>
           <div class="pop">${popEntity && this.hass.states[popEntity] ? Math.round(Number(this.hass.states[popEntity].state)) : "---"}</div><div class="unit">%</div></div>` : html``;
       }
-      if (this._config.entity_pos_1?.match('^weather.')) {
+      if (this._config.entity_pos_1?.match('^weather.') || this._config.entity_pos_1?.match('^sensor.')) {
         const posEntity = this._config.entity_pos_1;
         const posData = this._getForecastPropFromWeather(this.hass.states[posEntity].attributes.forecast, forecastDate, 'precipitation');
         pos = posEntity ? html`<div class="f-slot-vert"><div class="f-label">Possible rain </div>
