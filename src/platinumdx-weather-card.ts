@@ -547,7 +547,8 @@ export class PlatinumdxWeatherCard extends LitElement {
       var htmlIcon: TemplateResult;
       var maxTemp: string | undefined;
       var minTemp: string | undefined;
-      if (this._config.entity_forecast_icon_1?.match('^weather.')) {
+      // added || this._config.entity_forecast_icon_1?.match('^sensor.')) to work with new sensor method 1.0.15
+      if (this._config.entity_forecast_icon_1?.match('^weather.') || this._config.entity_forecast_icon_1?.match('^sensor.')) {
         // using a weather domain entity
         const iconEntity = this._config.entity_forecast_icon_1;
         const condition = this._getForecastPropFromWeather(this.hass.states[iconEntity].attributes.forecast, forecastDate, 'condition');
@@ -567,13 +568,15 @@ export class PlatinumdxWeatherCard extends LitElement {
         const url = new URL(((this._config.option_static_icons ? 's-' : 'a-') + (iconEntity && this.hass.states[iconEntity] ? this._weatherIcon(this.hass.states[iconEntity].state) : 'unknown') + '.svg').replace("-night", "-day"), import.meta.url);
         htmlIcon = html`<i class="icon" style="background: none, url(${url.href}) no-repeat; background-size: contain;"></i>`;
       }
-      if (this._config.entity_forecast_max_1?.match('^weather.')) {
+      // added || this._config.entity_forecast_max_1?.match('^sensor.')) to included updated sensor method 1.0.15
+      if (this._config.entity_forecast_max_1?.match('^weather.') || this._config.entity_forecast_max_1?.match('^sensor.')) {
         maxTemp = this._getForecastPropFromWeather(this.hass.states[this._config.entity_forecast_max_1].attributes.forecast, forecastDate, 'temperature');
       } else {
         start = this._config.entity_forecast_max_1 ? this._config.entity_forecast_max_1.match(/(\d+)(?!.*\d)/g) : false;
         maxTemp = start && this._config.entity_forecast_max_1 ? this.hass.states[this._config.entity_forecast_max_1.replace(/(\d+)(?!.*\d)/g, String(Number(start) + i))].state : undefined;
       }
-      if (this._config.entity_forecast_min_1?.match('^weather.')) {
+      // added || this._config.entity_forecast_min_1?.match('^sensor.')) to include updated sensor method.  1.0.15
+      if (this._config.entity_forecast_min_1?.match('^weather.') || this._config.entity_forecast_min_1?.match('^sensor.')) {
         minTemp = this._getForecastPropFromWeather(this.hass.states[this._config.entity_forecast_min_1].attributes.forecast, forecastDate, 'templow');
       } else {
         start = this._config.entity_forecast_min_1 ? this._config.entity_forecast_min_1.match(/(\d+)(?!.*\d)/g) : false;
@@ -622,7 +625,8 @@ export class PlatinumdxWeatherCard extends LitElement {
       var pop: TemplateResult;
       var pos: TemplateResult;
       var tooltip: TemplateResult;
-      if (this._config.entity_pop_1?.match('^weather.')) {
+      //added this._config.entity_pop_1?.match('^sensor.')) for 1.0.15
+      if (this._config.entity_pop_1?.match('^weather.') || this._config.entity_pop_1?.match('^sensor.')) {
         const popEntity = this._config.entity_pop_1;
         const popData = this._getForecastPropFromWeather(this.hass.states[popEntity].attributes.forecast, forecastDate, 'precipitation_probability');
         pop = popEntity ? html`<li class="f-slot-horiz-text"><span><div class="slot-text pop">${this.hass.states[popEntity] && popData !== undefined ? Math.round(Number(popData)) : "---"}</div><div class="unit">%</div></span></li>` : html``;
@@ -631,6 +635,7 @@ export class PlatinumdxWeatherCard extends LitElement {
         const popEntity = start && this._config.entity_pop_1 ? this._config.entity_pop_1.replace(/(\d+)(?!.*\d)/g, String(Number(start) + i)) : undefined;
         pop = start ? html`<li class="f-slot-horiz-text"><span><div class="slot-text pop">${popEntity && this.hass.states[popEntity] ? Math.round(Number(this.hass.states[popEntity].state)) : "---"}</div><div class="unit">%</div></span></li>` : html``;
       }
+      // added in 1.0.14 i think
       if (this._config.entity_pos_1?.match('^weather.') || this._config.entity_pos_1?.match('^sensor.')) {
         const posEntity = this._config.entity_pos_1;
         const posData = this._getForecastPropFromWeather(this.hass.states[posEntity].attributes.forecast, forecastDate, 'precipitation');
@@ -640,7 +645,8 @@ export class PlatinumdxWeatherCard extends LitElement {
         const posEntity = start && this._config.entity_pos_1 ? this._config.entity_pos_1.replace(/(\d+)(?!.*\d)/g, String(Number(start) + i)) : undefined;
         pos = start ? html`<li class="f-slot-horiz-text"><span><div class="pos">${posEntity && this.hass.states[posEntity] ? this.hass.states[posEntity].state : "---"}</div><div class="unit">${this.getUOM('precipitation')}</div></span></li>` : html``;
       }
-      if (this._config.entity_summary_1?.match('^weather.')) {
+      // added || this._config[entityName].match('^sensor.')) to 1.0.15
+      if (this._config.entity_summary_1?.match('^weather.') || this._config.entity_summary_1?.match('^sensor.')) {
         const tooltipEntity = this._config.entity_summary_1;
         const tooltipData = this._getForecastPropFromWeather(this.hass.states[tooltipEntity].attributes.forecast, forecastDate, 'detailed_description') ?? this._getForecastPropFromWeather(this.hass.states[tooltipEntity].attributes.forecast, forecastDate, 'condition');
         tooltip = html`<div class="fcasttooltipblock" id="fcast-summary-${i}" style="width:${days * 100}%;left:-${i * 100}%;"><div class="fcasttooltiptext">${this.hass.states[tooltipEntity] && tooltipData !== undefined ? stringComputeStateDisplay(this.hass.localize, tooltipData) : "---"}</div>
@@ -687,7 +693,8 @@ export class PlatinumdxWeatherCard extends LitElement {
       var pop: TemplateResult;
       var pos: TemplateResult;
       var fireDanger: TemplateResult;
-      if (this._config.entity_forecast_icon_1?.match('^weather.')) {
+      // added || this._config.entity_forecast_icon_1?.match('^sensor.')) for sensor method update 1.0.15
+      if (this._config.entity_forecast_icon_1?.match('^weather.') || this._config.entity_forecast_icon_1?.match('^sensor.')) {
         // using a weather domain entity
         const iconEntity = this._config.entity_forecast_icon_1;
         const condition = this._getForecastPropFromWeather(this.hass.states[iconEntity].attributes.forecast, forecastDate, 'condition');
@@ -713,13 +720,15 @@ export class PlatinumdxWeatherCard extends LitElement {
       const summary = start ? html`
         <div class="f-summary-vert">${summaryEntity && this.hass.states[summaryEntity] ? this.hass.states[summaryEntity].state : "---"}</div>` : ``;
 
-      if (this._config.entity_forecast_max_1?.match('^weather.')) {
+      //added || this._config.entity_forecast_max_1?.match('^sensor.')) 1.0.15
+      if (this._config.entity_forecast_max_1?.match('^weather.') || this._config.entity_forecast_max_1?.match('^sensor.')) {
         maxTemp = this._getForecastPropFromWeather(this.hass.states[this._config.entity_forecast_max_1].attributes.forecast, forecastDate, 'temperature');
       } else {
         start = this._config.entity_forecast_max_1 ? this._config.entity_forecast_max_1.match(/(\d+)(?!.*\d)/g) : false;
         maxTemp = start && this._config.entity_forecast_max_1 ? this.hass.states[this._config.entity_forecast_max_1.replace(/(\d+)(?!.*\d)/g, String(Number(start) + i))].state : undefined;
       }
-      if (this._config.entity_forecast_min_1?.match('^weather.')) {
+      //added || this._config.entity_forecast_min_1?.match('^sensor.')) 1.0.15
+      if (this._config.entity_forecast_min_1?.match('^weather.')|| this._config.entity_forecast_min_1?.match('^sensor.')) {
         minTemp = this._getForecastPropFromWeather(this.hass.states[this._config.entity_forecast_min_1].attributes.forecast, forecastDate, 'templow');
       } else {
         start = this._config.entity_forecast_min_1 ? this._config.entity_forecast_min_1.match(/(\d+)(?!.*\d)/g) : false;
@@ -736,7 +745,8 @@ export class PlatinumdxWeatherCard extends LitElement {
           <div class="temp-label">Max: </div>
           <div class="high-temp">${Math.round(Number(maxTemp))}</div>${tempUnit}
         </div>` : html`---`;
-      if (this._config.entity_pop_1?.match('^weather.')) {
+      // added sensor 1.0.15
+      if (this._config.entity_pop_1?.match('^weather.') || this._config.entity_pop_1?.match('^sensor.')) {
         const popEntity = this._config.entity_pop_1;
         const popData = this._getForecastPropFromWeather(this.hass.states[popEntity].attributes.forecast, forecastDate, 'precipitation_probability');
         pop = popEntity ? html`<div class="f-slot-vert"><div class="f-label">Chance of rain </div>
@@ -748,6 +758,7 @@ export class PlatinumdxWeatherCard extends LitElement {
           <div class="f-slot-vert"><div class="f-label">Chance of rain </div>
           <div class="pop">${popEntity && this.hass.states[popEntity] ? Math.round(Number(this.hass.states[popEntity].state)) : "---"}</div><div class="unit">%</div></div>` : html``;
       }
+      //added 1.0.14 i think
       if (this._config.entity_pos_1?.match('^weather.') || this._config.entity_pos_1?.match('^sensor.')) {
         const posEntity = this._config.entity_pos_1;
         const posData = this._getForecastPropFromWeather(this.hass.states[posEntity].attributes.forecast, forecastDate, 'precipitation');
