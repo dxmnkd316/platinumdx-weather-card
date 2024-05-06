@@ -350,7 +350,7 @@ This reference is here for completeness. All settings can be configured using th
 | Variable                       | Type    | Default      | Description                                                                |
 | ------------------------------ | ------- | ------------ | -------------------------------------------------------------------------- |
 | daily_forecast_layout          | String  | `horizontal` | Format for layout `horizontal` or `vertical`                               |
-| daily_forecast_days            | Number  | `5`          | Number of days to include in forecast. `horizontal (1-5)` `vertical (1-7)` |
+| daily_forecast_days            | Number  | `5`          | Number of days to include in forecast. `horizontal (1-7)` `vertical (1-7)` |
 | option_tooltips                | Boolean | `false`      | Show forecast tooltips on horizontal forecast                              |
 | daily_extended_forecast_days   | Number  | `7`          | Show extended forecast. (only for vertical forecast `(1-7)`)               |
 | option_daily_color_fire_danger | Boolean | `true`       | Use color attributes from fire danger if set (oly for vertical forecast)   |
