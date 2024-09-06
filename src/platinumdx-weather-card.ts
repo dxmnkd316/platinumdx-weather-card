@@ -543,7 +543,8 @@ export class PlatinumdxWeatherCard extends LitElement {
 
     for (var i = 0; i < days; i++) {
       const forecastDate = new Date();
-      forecastDate.setDate(forecastDate.getDate() + i + 1);
+      forecastDate.setDate(forecastDate.getDate() + i);
+      //deleted +1 after +i to try and include today in forecast display.
       var htmlIcon: TemplateResult;
       var maxTemp: string | undefined;
       var minTemp: string | undefined;
