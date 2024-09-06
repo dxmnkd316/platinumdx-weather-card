@@ -541,7 +541,8 @@ export class PlatinumdxWeatherCard extends LitElement {
     const htmlDays: TemplateResult[] = [];
     const days = this._config.daily_forecast_days || 5;
 
-    for (var i = 0; i < days; i++) {
+    for (var i = 0; i < days + 1; i++) {
+      //added +1 to days to make sure that today AND the full number of days selected are shown.
       const forecastDate = new Date();
       forecastDate.setDate(forecastDate.getDate() + i);
       //deleted +1 after +i to try and include today in forecast display.
